@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100%;
+            height: 100vh;
+            background-color: aqua;
+            background: url()
+        }
+
+        * {
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div onclick="test()"></div>
+    <p style="display: none">0</p>
+    <script>
+
+        function test() {
+            let ch=Number(document.querySelector("p").innerHTML);
+            if (ch == 10) {
+                var audio = new Audio();
+                audio.preload = 'auto';
+                audio.src = '/Users/Владислав/Desktop/проект/gdfgdgf.mp3';
+                audio.play();
+                document.querySelector("div").style.backgroundImage = "url('maxresdefault.jpg')";
+                document.querySelector("div").style.backgroundSize = "100%";
+                document.querySelector("p").innerHTML = 99;
+                
+            }
+            else if (ch < 10) {
+            document.querySelector("div").style.backgroundColor = '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase();
+            ch++;
+            document.querySelector("p").innerHTML = ch;
+                }
+        }
+
+    </script>
+</body>
+
+</html>
